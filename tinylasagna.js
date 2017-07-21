@@ -6,12 +6,6 @@
 //******************************************************************************
 //******************************************************************************
 //copy and paste into componentDidMount in your PlayList component.
-fetch('https://tiny-lasagna-server.herokuapp.com/collections/playlisting').then(results => {
-      return results.json();
-    }).then(data => {
-      this.setState({songs: data});
-      console.log("state", this.state.songs);
-    })
 
 
 //Also in your PlayList component you should have a function that manually updates
@@ -24,7 +18,7 @@ fetchData = (e) => {
       return results.json();
     }).then(data => {
       this.setState({songs: data});
-    })
+    });
   }
 
 ///^^^^^^^^ The above function could also be written as a method :
