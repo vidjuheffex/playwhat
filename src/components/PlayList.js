@@ -18,6 +18,14 @@ class PlayList extends Component {
       });
   }
 
+  handleClick = e => {
+        fetch('https://tiny-lasagna-server.herokuapp.com/collections/playlisting')
+      .then(results => {
+        return results.json();
+      }).then(data => {
+        this.setState({songs: data});
+      });
+  }
   
   render(){
     let playlist = this.state.songs.map( e => {
@@ -30,8 +38,8 @@ class PlayList extends Component {
     
     return(
       <div>
-        <button type="button" className="btn btn-primary">Primary</button>
-        <div>
+        <button type="button" className="btn btn-primary m-3" onClick={this.handleClick}>Fetch More Random Songs</button>
+        <div className="mb-3">
           {playlist}
         </div>
       </div>

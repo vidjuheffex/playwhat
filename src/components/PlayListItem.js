@@ -4,7 +4,7 @@ class PlayListItem extends Component {
   render(){
     let song=this.props.song;
     return (
-      <div key="song._id" className="card">
+      <div key="song._id" className="card mb-3">
         <div className ="card-block">
           <ul className="list-group">
             <li className="list-group-item"><strong>User:</strong>{song.userName}</li>
